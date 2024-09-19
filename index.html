@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Portfolio - Ananya Sadhiye</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0e1621;
+            color: #ffffff;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #111b27;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo h1 {
+            color: #ff4655;
+            font-size: 1.5rem;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-right: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ff4655;
+        }
+
+        .cta-btn {
+            background-color: #ff4655;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background-color: #ffffff;
+            color: #ff4655;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 100px 50px;
+            background-color: #111b27;
+            padding-left: 80px; /* Ensure space from social icons */
+        }
+
+        .hero-content {
+            max-width: 500px;
+        }
+
+        .hero h4 {
+            font-size: 1.2rem;
+            color: #a9a9a9;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin: 20px 0;
+        }
+
+        .hero h1 span {
+            color: #ff4655;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #ffffff;
+        }
+
+        .btn-group a {
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            margin-right: 15px;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .btn-red {
+            background-color: #ff4655;
+            color: #ffffff;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-red:hover {
+            background-color: #ffffff;
+            color: #ff4655;
+        }
+
+        .btn-blue {
+            background-color: #2d5dff;
+            color: #ffffff;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-blue:hover {
+            background-color: #ffffff;
+            color: #2d5dff;
+        }
+
+        /* Elliptical Image */
+        .hero-image img {
+            width: 370px; /* Set a specific width */
+            height: 590px; /* Set a specific height */
+            border-radius: 70%; /* Elliptical shape with equal border-radius for height and width */
+            object-fit: cover; /* Ensure the image covers the area */
+            display: block;
+            margin: 0 auto;
+            transform: translateY(-2cm); /* Moves the image 2 cm upward */
+
+        }
+        
+
+        /* About Section */
+        #about {
+            padding: 100px 50px;
+            background-color: #0e1621;
+            text-align: center;
+        }
+
+        #about h2 {
+            font-size: 2.5rem;
+            color: #ff4655;
+            margin-bottom: 30px;
+        }
+
+        #about p {
+            font-size: 1.2rem;
+            color: #ffffff;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Education Section */
+        #education {
+            padding: 100px 50px;
+            background-color: #111b27;
+            text-align: center;
+        }
+
+        #education h2 {
+            font-size: 2.5rem;
+            color: #ff4655;
+            margin-bottom: 30px;
+        }
+
+        #education ul {
+            list-style: none;
+            padding: 0;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #ffffff;
+        }
+
+        #education ul li {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        /* Portfolio Section */
+        #portfolio {
+            padding: 100px 50px;
+            background-color: #111b27;
+            text-align: center;
+        }
+
+        #portfolio h2 {
+            font-size: 2.5rem;
+            color: #ff4655;
+            margin-bottom: 30px;
+        }
+
+        .portfolio-item {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .portfolio-item img {
+            width: 300px;
+            height: 200px;
+            margin: 15px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-item img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Blog Section */
+        #blog {
+            padding: 100px 50px;
+            background-color: #0e1621;
+            text-align: center;
+        }
+
+        #blog h2 {
+            font-size: 2.5rem;
+            color: #ff4655;
+            margin-bottom: 30px;
+        }
+
+        .blog-item {
+            color: #ffffff;
+            margin-bottom: 30px;
+        }
+
+        .blog-item a {
+            text-decoration: none;
+            color: #ff4655;
+            font-size: 1.2rem;
+        }
+
+        .blog-item a:hover {
+            color: #ffffff;
+        }
+
+        /* Skills Section */
+        #skills {
+            padding: 100px 50px;
+            background-color: #111b27;
+            text-align: center;
+        }
+
+        #skills h2 {
+            font-size: 2.5rem;
+            color: #ff4655;
+            margin-bottom: 30px;
+        }
+
+        #skills ul {
+            list-style: none;
+            padding: 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        #skills ul li {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 100px 50px;
+            background-color: #111b27;
+            text-align: center;
+        }
+
+        #contact h2 {
+            font-size: 2.5rem;
+            color: #ff4655;
+            margin-bottom: 30px;
+        }
+
+        #contact form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        #contact input, #contact textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background-color: #ffffff;
+            color: #0e1621;
+            font-size: 1rem;
+        }
+
+        #contact button {
+            background-color: #ff4655;
+            color: #ffffff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #contact button:hover {
+            background-color: #ffffff;
+            color: #ff4655;
+        }
+
+        /* Social Media Links */
+        .social-links {
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #111b27;
+            border-radius: 25px;
+            padding: 10px;
+        }
+
+        .social-links a {
+            margin: 10px 0;
+            color: #ffffff;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #ff4655;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0e1621;
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid #ff4655;
+        }
+
+        footer p {
+            color: #ffffff;
+            font-size: 1rem;
+        }
+
+        /* Typing Animation */
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #ffffff; }
+        }
+
+        .typing-effect {
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid #ff4655;
+            animation: typing 4s steps(30, end) infinite, blink-caret 0.75s step-end infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>&lt;/Ananya&gt;</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#portfolio">Projects</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#skills">Skills</a></li>
+            </ul>
+            <a href="#contact" class="cta-btn">Let's Talk</a>
+        </nav>
+    </header>
+
+    <!-- Main Section (Hero) -->
+    <section class="hero">
+        <div class="hero-content">
+            <h4 class="typing-effect">Hi There</h4>
+            <h1 class="typing-effect">I'm <span>Ananya Sadhiye</span></h1>
+            <p>I'm a Computer Science & Engineering student with a passion for web development, AI, and machine learning. I love creating innovative solutions and learning new technologies.</p>
+
+            <div class="btn-group">
+                <a href="https://drive.google.com/file/d/1L9JMeMh5k74WIPkLsiyghOyF2YdT0bAP/view?usp=sharing" class="btn-red" target="_blank">Resume</a>
+                <a href="#contact" class="btn-blue">Contact Me</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="anu.jpg" alt="Web Developer">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+<P>Hello! I’m Ananya Sadhiye, a dedicated Computer Science and Engineering student at Srinivasa Institute of Technology, Mangaluru, where I am currently pursuing my B.E. with a CGPA of 7.83. My passion for technology drives me to explore innovative solutions and stay at the forefront of emerging trends. You can contact me at +91-6366206934 or via email at sadhiyeananya@gmail.com.
+
+    I have a strong track record in developing impactful projects.<br><br> My notable personal projects include "Book My Ticket," an advanced online IPL ticket booking system that enhances the booking experience with user and admin functionalities, and "Harvest Hub," a comprehensive Android application designed to empower farmers by providing real-time updates on government schemes, APMC market prices, and a platform for vegetable shopping. This project showcases my ability to integrate real-time data and streamline farm management.<br>
+    <br>
+    <p>My technical expertise spans languages like Java, Python, and JavaScript, along with web development skills in HTML5, CSS3, and responsive design. I am also proficient in using developer tools such as VS Code, Android Studio, and IntelliJ, and working with databases like MySQL, Google Firebase, and MongoDB.</p><br>
+    <p>In addition to my technical skills, I bring strong soft skills including teamwork, problem-solving, time management, critical thinking, and self-awareness. My interests extend to full-stack web development, cloud computing, data analysis, artificial intelligence, and machine learning.
+    
+    I am actively engaged in extracurricular activities, having participated in prominent hackathons such as CodeKaze and Cisco Codethon. I also initiated and led a team in refurbishing a government school in Mangaluru through NSS. My college life is enriched by my active participation in cultural activities, including painting, dancing, and Sports.</P></P>    </section>
+<br>
+<br>
+<br>
+    <!-- Education Section -->
+    <section id="education">
+        <h2>Education</h2>
+        <ul>
+            <li><strong>B.E. in Computer Science and Engineering</strong> – Srinivasa Institute Of Technology, Mangaluru (2021 - Ongoing) | CGPA: 7.83</li>
+            <li><strong>Pre-University Course (PUC)</strong> – Government PU College, Kumta (2019-2021) | Percentage: 74.16</li>
+            <li><strong>Secondary School Leaving Certificate (SSLC)</strong> – Bhadrakali High School, Gokarna (2019) | Percentage: 78.40</li>
+        </ul>
+    </section>
+    <br><br><br><br><br><br><br><br>
+
+    <!-- Portfolio Section -->
+    <!-- <section id="portfolio">
+        <h2>Projects</h2>
+        <div class="portfolio-item">
+            <img src="project1.jpg" alt="Book My Ticket - IPL Ticket Booking ">
+            <img src="project2.jpg" alt="Harvest Hub - Connecting Farmers To Success ">
+        </div>
+    </section> -->
+    <!-- Portfolio Section -->
+<section id="portfolio" class="portfolio-section">
+    <h2 class="section-title">Projects</h2>
+    <div class="portfolio-grid">
+        <!-- Book My Ticket Project -->
+        <div class="portfolio-project">
+            <p class="project-name" onclick="openModal('modal1')">Book My Ticket: Online IPL Ticket Booking System</p>
+        </div>
+        <!-- PG Life Project (Center) -->
+        <div class="portfolio-project" id="pg-life">
+            <p class="project-name" onclick="openModal('modal3')">PG Life: Simplifying PG Search</p>
+        </div>
+        <!-- Harvest Hub Project -->
+        <div class="portfolio-project">
+            <p class="project-name" onclick="openModal('modal2')">Harvest Hub: Connecting Farmers to Success</p>
+        </div>
+    </div>
+</section>
+
+<!-- Modals for Portfolio Projects -->
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal1')">&times;</span>
+        <div class="modal-body">
+            <img src="Screenshot (8).png" alt="Book My Ticket Image 1" class="modal-img">
+            <img src="Screenshot (9).png" alt="Book My Ticket Image 2" class="modal-img">
+            <img src="Screenshot (10).png" alt="Book My Ticket Image 3" class="modal-img">
+            <img src="Screenshot (11).png" alt="Book My Ticket Image 3" class="modal-img">
+            <img src="Screenshot (12).png" alt="Book My Ticket Image 3" class="modal-img">
+            <img src="Screenshot (14).png" alt="Book My Ticket Image 3" class="modal-img">
+            
+
+
+            <div class="modal-text">
+                <h3>Book My Ticket: Online IPL Ticket Booking System</h3>
+                <p>This project is an online IPL ticket booking system built as part of a database management system. It allows users to book tickets, view seating arrangements, and select matches. The technologies used are MySQL for the database and Java for backend processing.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modal2" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal2')">&times;</span>
+        <div class="modal-body">
+            <img src="p21.png" alt="Harvest Hub Image 1" class="modal-img">
+            <img src="p22.png" alt="Harvest Hub Image 2" class="modal-img">
+            <img src="p23.png" alt="Harvest Hub Image 3" class="modal-img">
+            <img src="p24.png" alt="Harvest Hub Image 3" class="modal-img">
+            <img src="p25.png" alt="Harvest Hub Image 3" class="modal-img">
+
+            <img src="p26.png" alt="Harvest Hub Image 3" class="modal-img">
+
+            <img src="p27.png" alt="Harvest Hub Image 3" class="modal-img">
+            <img src="p28.png" alt="Harvest Hub Image 3" class="modal-img">
+            <img src="p210.png" alt="Harvest Hub Image 3" class="modal-img">
+
+
+
+            <div class="modal-text">
+                <h3>Harvest Hub: Connecting Farmers to Success</h3>
+                <p>Harvest Hub is an Android application designed to assist farmers with real-time weather forecasts, crop disease detection, and an online marketplace to sell their produce. It integrates OpenWeatherMap API for forecasts and Firebase for backend support.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- PG Life Modal -->
+<div id="modal3" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal3')">&times;</span>
+        <div class="modal-body">
+            <img src="Screenshot (50).png" alt="PG Life Image 1" class="modal-img">
+            <img src="Screenshot (51).png" alt="PG Life Image 2" class="modal-img">
+            <img src="Screenshot (52).png" alt="PG Life Image 3" class="modal-img">
+
+
+            <div class="modal-text">
+                <h3>PG Life: Simplifying PG Search</h3>
+                <p>PG Life is a comprehensive platform designed to simplify the search for paying guest accommodations. It features user-friendly interfaces, real-time data management, and seamless booking functionalities. The project uses HTML, CSS, Node.js, MySQL, and PHP to deliver an efficient and reliable experience for users.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Styles -->
+<style>
+    /* General Section Styling */
+    .portfolio-section {
+        padding: 50px 0;
+        background-color: #f7f7f7;
+        text-align: center;
+    }
+
+    .section-title {
+        font-size: 36px;
+        color: #333;
+        font-family: 'Roboto', sans-serif;
+        margin-bottom: 40px;
+    }
+
+    /* Portfolio Grid */
+    .portfolio-grid {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .portfolio-project {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .portfolio-project:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .project-name {
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 20px;
+        color: #007bff;
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .project-name:hover {
+        text-decoration: underline;
+    }
+
+    /* Modal Styles */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        overflow: auto;
+    }
+
+    .modal-content {
+        background-color: white;
+        margin: 10% auto;
+        padding: 20px;
+        width: 80%;
+        max-width: 900px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover, .close:focus {
+        color: black;
+        cursor: pointer;
+    }
+
+    /* Modal Content */
+    .modal-body {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .modal-img {
+        width: 100%;
+        max-width: 250px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .modal-text {
+        flex: 1;
+        text-align: left;
+    }
+
+    .modal-text h3 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 15px;
+    }
+
+    .modal-text p {
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        color: #666;
+        line-height: 1.6;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .modal-body {
+            flex-direction: column;
+        }
+
+        .portfolio-grid {
+            flex-direction: column;
+        }
+    }
+</style>
+
+<!-- Modal JavaScript -->
+<script>
+    function openModal(modalId) {
+        document.getElementById(modalId).style.display = "block";
+    }
+
+    function closeModal(modalId) {
+        document.getElementById(modalId).style.display = "none";
+    }
+
+    // Close the modal if clicked outside of modal-content
+    window.onclick = function(event) {
+        const modal1 = document.getElementById('modal1');
+        const modal2 = document.getElementById('modal2');
+        const modal3 = document.getElementById('modal3');
+        if (event.target == modal1) {
+            modal1.style.display = "none";
+        }
+        if (event.target == modal2) {
+            modal2.style.display = "none";
+        }
+        if (event.target == modal3) {
+            modal3.style.display = "none";
+        }
+    }
+</script>
+
+
+    <!-- Blog Section -->
+    <!-- <section id="blog">
+        <h2>Blog</h2>
+        <div class="blog-item">
+            <a href="#">My Journey as a Web Developer</a>
+        </div>
+        <div class="blog-item">
+            <a href="#">Top 10 Web Development Tools</a>
+        </div>
+    </section> -->
+    <br><br><br><br>
+    <br>
+    <br><br><br><br><br><br>
+    <section id="blog">
+        <h2>Blog</h2>
+        
+        <div class="blog-item">
+            <a href="#">My Journey as a Web Developer</a>
+            <p>Starting as a web development enthusiast, I've worked on several projects, including a full-fledged IPL ticket booking system and a farmer-oriented Android application. My journey showcases how curiosity and dedication can lead to mastering tools like HTML5, CSS3, Java, and JSP.</p>
+        </div>
+        
+        <div class="blog-item">
+            <a href="#">Top 10 Web Development Tools</a>
+            <p>From Visual Studio Code to Google Firebase, I've experimented with a range of web development tools. This blog covers the top 10 tools that helped me create efficient, scalable projects, including my IPL booking system and Android apps.</p>
+        </div>
+        
+        <div class="blog-item">
+            <a href="#">Building "Book My Ticket": A Case Study</a>
+            <p>This project highlights how my team developed a web application for IPL ticket booking, focusing on database management and user authentication. Discover how we streamlined the process for cricket fans and event organizers alike.</p>
+        </div>
+    
+        <div class="blog-item">
+            <a href="#">Harvest Hub: A Platform for Farmers' Success</a>
+            <p>An in-depth look at "Harvest Hub," an Android application that connects farmers with essential tools like APMC market prices, real-time updates on government schemes, and an integrated shopping feature for vegetables. Learn how we leveraged Flutter and Google Firebase to bring this project to life.</p>
+        </div>
+    
+        <div class="blog-item">
+            <a href="#">The Importance of Hackathons</a>
+            <p>Participating in events like CodeKaze and Cisco Codethon not only improved my coding skills but also helped me develop a collaborative mindset and problem-solving abilities. In this post, I discuss how hackathons shape a developer's journey.</p>
+        </div>
+    </section>
+    
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>Languages: Java, Python, JavaScript</li>
+            <li>Web Development: HTML5, CSS3, Responsive Design, CSS Frameworks</li>
+            <li>Databases: MySQL, Google Firebase, MongoDB</li>
+            <li>Developer Tools: VsCode, Android Studio, Intellij</li>
+            <li>Soft Skills: Teamwork, Problem-solving, Time Management</li>
+        </ul>
+    </section>
+    <br><br><br><br><br><br><br><br><br><br>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form id="contact-form" action="https://formspree.io/f/xldryeql" method="POST" onsubmit="handleFormSubmit(event)">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    
+        <!-- Thank You message (hidden by default) -->
+        <div id="thank-you-message" class="thank-you" style="display: none;">
+            <h3>Thank You!</h3>
+            <p>Your message has been sent successfully. I'll get back to you soon!</p>
+        </div>
+    </section>
+    
+    <style>
+        #contact {
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+            font-family: Arial, sans-serif;
+            background: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+    
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border 0.3s;
+        }
+    
+        input:focus, textarea:focus {
+            border-color: #007bff;
+        }
+    
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+    
+        button:hover {
+            background-color: #0056b3;
+        }
+    
+        .thank-you {
+            margin-top: 20px;
+            text-align: center;
+            background-color: #dff0d8;
+            color: #3c763d;
+            padding: 20px;
+            border-radius: 10px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+    
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+    
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault();  // Prevent the default form submission behavior
+    
+            // Get the form element
+            const form = document.getElementById('contact-form');
+    
+            // Send the form data using Fetch API
+            fetch(form.action, {
+                method: form.method,
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    // Hide the form
+                    form.style.display = 'none';
+    
+                    // Show the thank you message with fade-in animation
+                    document.getElementById('thank-you-message').style.display = 'block';
+                } else {
+                    alert('Oops! Something went wrong. Please try again.');
+                }
+            }).catch(error => {
+                alert('Oops! There was a problem submitting the form.');
+            });
+        }
+    </script>
+    
+    
+    <!-- Social Media Links -->
+    <div class="social-links">
+        <a href="https://linkedin.com/in/ananya-sadhiye-56045b311" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/ananyasadhiye" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://x.com/AnanyaSadhiye" target="_blank"><i class="fab fa-twitter"></i></a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Ananaya Sadhiye. All rights reserved.</p>
+    </footer>
+
+    <!-- Typing Animation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const elements = document.querySelectorAll('.typing-effect');
+            elements.forEach((element, index) => {
+                setTimeout(() => {
+                    element.style.animation = 'typing 4s steps(' + element.innerText.length + ', end), blink-caret 0.75s step-end infinite';
+                }, index * 5000); // Delay for each element
+            });
+        });
+    </script>
+</body>
+
+</html>
